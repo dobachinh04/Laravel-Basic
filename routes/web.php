@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::view('/', 'welcome');
-Route::get('/posts', function () {
-    return "Danh sách bài posts";
-});
+
+// Route::get('/posts', function () {
+//     return "Danh sách bài posts";
+// });
+
+Route::post('/posts', [ProductController::class, 'index'])->name('post.idex');
