@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// *Đều như nhau:
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::view('/', 'welcome');
+Route::get('/posts', function () {
+    return "Danh sách bài posts";
 });
