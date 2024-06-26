@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\TinhToanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,6 @@ Route::view('/', 'welcome');
 //     return "Danh sách bài posts";
 // });
 
-Route::post('/posts', [ProductController::class, 'index'])->name('post.idex');
+// Route::post('/posts', [ProductController::class, 'index'])->name('post.idex');
+
+Route::get('tong/{a}/{b}', [TinhToanController::class, 'tinhTong']);
