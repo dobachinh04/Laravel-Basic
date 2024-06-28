@@ -4,24 +4,13 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\TinhToanController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 // *Đều như nhau:
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::view('/', 'welcome');
+// Route::view('/', 'welcome');
 
 // Route::get('/posts', function () {
 //     return "Danh sách bài posts";
@@ -30,3 +19,34 @@ Route::view('/', 'welcome');
 // Route::post('/posts', [ProductController::class, 'index'])->name('post.idex');
 
 Route::get('tong/{a}/{b}', [TinhToanController::class, 'tinhTong']);
+
+Route::get('/', function () {
+    // $data = [
+    //     [
+    //         'name' => 'Tin Tức 2',
+    //         'image' => 'tintuc2.png'
+    //     ],
+    //     [
+    //         'name' => 'Tin Tức 3',
+    //         'image' => 'tintuc3.png'
+    //     ],
+    //     [
+    //         'name' => 'Tin Tức 4',
+    //         'image' => 'tintuc4.png'
+    //     ],
+    // ];
+
+    // DB::table('categories')
+    //     ->insert($data);
+
+    $data =
+        [
+            'name' => 'Haha',
+        ];
+
+    DB::table('categories')
+        ->where('id', 2)
+        ->update($data);
+
+    echo "Thành công!";
+});
